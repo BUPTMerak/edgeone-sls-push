@@ -7,7 +7,7 @@ RUN --mount=type=cache,id=go-mod,target=/go/pkg/mod \
 COPY . .
 RUN --mount=type=cache,id=go-build,target=/root/.cache/go-build \
     --mount=type=cache,id=go-mod,target=/go/pkg/mod \
-    go build -v -ldflags="-s -w" -o app .
+    go build -v -ldflags="-w" -o app .
 
 FROM debian:trixie-slim AS runner
 
